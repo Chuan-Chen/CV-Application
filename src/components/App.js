@@ -6,6 +6,7 @@ export default class App extends Component{
     constructor(){
         super();
         this.state = {
+            picture: "picture url",
             name: "Your Name",
             occupation: "Occupation",
             skills: "skills",
@@ -17,6 +18,7 @@ export default class App extends Component{
         return(
             <div className="container">
                 <div className="content-body">
+                    <TextField label = {this.state.picture}/>
                     <TextField label = {this.state.name}/>
                     <TextField label = {this.state.occupation}/>
                     <TextField label = {this.state.skills}/>

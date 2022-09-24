@@ -1,4 +1,12 @@
 
 .text-field{
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    background-color: antiquewhite;
+    border-radius: 10px;
 }

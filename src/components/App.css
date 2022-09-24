@@ -29,6 +29,7 @@ body{
     "picture picture description description description"
     "picture picture skills skills skills";
     grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
 }
 
 .container{

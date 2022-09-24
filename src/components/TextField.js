@@ -9,14 +9,15 @@ export default class TextField extends React.Component{
         }
     }
     handleClick = (e) => {
-        console.log(this)
+        console.log(e.clientX, e.clientY);
+        
     }
 
     render(){
 
         return(
-          <div className="text-field">
-            <div onClick={this.handleClick}>{this.state.text}</div>
+          <div onClick={this.handleClick} className="text-field">
+            <div>{this.state.text}</div>
           </div>  
         );
     }
