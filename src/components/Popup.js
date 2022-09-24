@@ -8,8 +8,8 @@ export default class Popup extends React.Component{
         }
     }
     checkDisplay(display){
-        if(display) return "block";
-        return "initial";
+        if(display) this.setState({show: ""})
+
     }
     render(){
         return (
