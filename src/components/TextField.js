@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./TextField.css";
+import "./TextField.css";
 
 export default class TextField extends React.Component{
     constructor(props){
@@ -9,15 +9,13 @@ export default class TextField extends React.Component{
         }
     }
     handleClick = (e) => {
-        return(
-            <input type = "text"/>
-        );
+        console.log(this)
     }
 
     render(){
 
         return(
-          <div >
+          <div className="text-field">
             <div onClick={this.handleClick}>{this.state.text}</div>
           </div>  
         );

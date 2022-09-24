@@ -1,21 +1,29 @@
 import React, { Component } from "react";
 import TextField from "./textField.js";
+import Footer from "./Footer.js";
+import "./App.css";
 export default class App extends Component{
     constructor(){
         super();
         this.state = {
             name: "Your Name",
             occupation: "Occupation",
+            skills: "skills",
         }
     }
     
     render(){
         
         return(
-            <div>
-                <TextField label = {this.state.name}/>
-                <TextField label = {this.state.occupation}/>
+            <div className="container">
+                <div className="content-body">
+                    <TextField label = {this.state.name}/>
+                    <TextField label = {this.state.occupation}/>
+                    <TextField label = {this.state.skills}/>
+                </div>
+                <Footer/>
             </div>
+           
         )
     }
 }
