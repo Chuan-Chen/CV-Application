@@ -8,9 +8,10 @@ export default class App extends Component{
         
         super();
         this.state = {
-            picture: "picture url",
-            name: "Your Name",
-            occupation: "Occupation",
+            clicked: "",
+            picture: "picture",
+            name: "name",
+            occupation: "occupation",
             skills: "skills",
             show: false,
             x: 0,
@@ -20,16 +21,16 @@ export default class App extends Component{
 
 
 
-    handleClick = (e) => {
+    handleClick = async (e) => {
         let signal = this.state.show;
-        console.log(e.target.innerText);
-        this.setState({x: e.clientX, y: e.clientY, show: !signal}); 
+        this.setState({x: e.clientX, y: e.clientY, show: !signal, clicked: e.target}); 
+        console.log(this.state)
         //console.log(this.state.x, this.state.y)
         //console.log(this.state.show);
     }
     
-    handleDescription(description){
-
+    handleDescription(element, description){
+        element.textContent = description;
     }
 
 
@@ -37,7 +38,7 @@ export default class App extends Component{
 
         return(
         <div>
-            <Popup onChangeClick={this.handleClick} x={this.state.x} y={this.state.y} popupClass={`popup-${this.state.show}`} />
+            <Popup onChangeClick={this.handleClick} x={this.state.x} y={this.state.y} popupClass={`popup-${this.state.show}`} changeDescription = {this.handleDescription} clickedElement = {this.state.clicked}/>
             <div className="container">
                 <div className="content-body">
                     <TextField handleOnClick={this.handleClick} label = {this.state.picture}/>
