@@ -4,20 +4,15 @@ export default class Popup extends React.Component{
     constructor(props){
         super(props);
         this.state = { 
-            show: this.props.show,
+           popupClass: this.props.popupClass,
         }
-    }
-    checkDisplay(display){
-        if(display) this.setState({show: ""})
-
     }
     render(){
         return (
-            <div onClick = {() => {this.setState({show: false})}} className ="popup">
-                <div className = "background" ></div>
-                <input type="text" style ={{zIndex: 3, position: "absolute", top: this.props.y, left: this.props.x, display: this.checkDisplay(this.state.show)}}/>
+            <div className ={this.props.popupClass}>
+                <div onClick = {this.props.onChangeClick} className = "background" ></div>
+                <input type="text" className= "inputField" style ={{top: this.props.y, left: this.props.x}}/>
             </div>
-            
         );
     }
 }

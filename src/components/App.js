@@ -17,19 +17,27 @@ export default class App extends Component{
             y: 0,
         }
     }
+
+
+
     handleClick = (e) => {
         let signal = this.state.show;
-
+        console.log(e.target.innerText);
         this.setState({x: e.clientX, y: e.clientY, show: !signal}); 
-        console.log(this.state.x, this.state.y)
-        console.log(this.state.show);
+        //console.log(this.state.x, this.state.y)
+        //console.log(this.state.show);
     }
     
+    handleDescription(description){
+
+    }
+
+
     render(){
 
         return(
         <div>
-            <Popup x={this.state.x} y={this.state.y} show={this.state.show} />
+            <Popup onChangeClick={this.handleClick} x={this.state.x} y={this.state.y} popupClass={`popup-${this.state.show}`} />
             <div className="container">
                 <div className="content-body">
                     <TextField handleOnClick={this.handleClick} label = {this.state.picture}/>
